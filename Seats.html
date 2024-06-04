@@ -1,0 +1,178 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Seatsstyle.css" >
+    <script>
+        
+        var bc,tse,card,cvv,total;
+        let seav=['A1','A2','A3','A4','A5','A6','A7','A8','A9','A10','B1','B2','B3','B4','B5','B6','B7','B8','B9','B10','C1','C2','C3','C4','C5','C6','C7','C8','C9','C10'];
+        let sebok=[];
+        card=123456789;
+        cvv=999
+        // var e=document.getElementById("movie");
+        // e.onchange=onChange();
+        function onChange1(){
+            // var value=e.value;
+            // const moviename=document.getElementById("movie");
+            // moviename.innerText=value;
+            var moviename =document.getElementById("movie");
+            var dispname = `${moviename.value}`;
+            document.getElementById("moviename").textContent=dispname;
+        }
+        
+        function redirect(){
+            var cardin=window.prompt("Enter cardno.");
+            var cvvin=window.prompt("Enter cvv");
+            var cardinc=parseInt(cardin);
+            var cvvinc=parseInt(cvvin);
+            if(cardinc === card && cvvinc === cvv ){
+                window.alert("Payment sucessful!");
+                // const moviename=document.getElementById('movie');
+                // const mname=document.getElementById("moviename");
+                // mname.innerText=moviename;
+                const sname=document.getElementById("sname");
+                sname.innerText=sebok;
+                const price=document.getElementById("price");
+                price.innerText=sebok.length*350;
+                const final=document.getElementById("final");
+                final.innerText=(sebok.length*350)+30;
+
+            }
+            else{
+                window.alert("Invaild card details!\n Payment Denied!");
+            }
+        }n 
+      
+        function val(clicked){
+           var currclr= document.getElementById(clicked);
+           const curclass=currclr.getAttribute("class");
+           if(curclass=="but"){
+            currclr.setAttribute('class' , 'but selected');
+           }
+            bc=clicked;
+
+            
+            removese();
+        }
+      
+        function removese(){
+           
+            for (var i = 0; i < seav.length; i++) {
+               
+            if (seav[i] === bc) {
+                var spliced = seav.splice(i, 1);
+                console.log("Removed element: " + spliced);
+                console.log("Remaining elements: " + seav);
+                
+            }
+            else{
+
+            }
+            
+            
+        }
+        booked();
+        }
+        function booked(){
+           
+                sebok.push(bc);
+            
+            totalseatsselected();
+        }
+        function totalseatsselected(){
+            tse=sebok.length;
+            const count=document.getElementById("count");
+        count.innerText=tse;
+        disp();
+        }
+        function disp(){
+            const seatname=document.getElementById("seatname");
+            seatname.innerText=sebok;
+            cost();
+        }
+        function cost(){
+             total=document.getElementById("cost");
+            total.innerText=sebok.length*350;
+        }
+        
+
+        
+    </script>
+</head>
+<body>
+     <br><br><br><br><br><br><br><br><br><br><br>
+    <div class="movie-container">
+        <label> Select a movie:</label>
+        <select id="movie" onchange="onChange1()">
+          <option value="John Wick4">John Wick4 (RS.350)</option>
+          <option value="Pathaan">Pathaan (RS.350)</option>
+          <option value="Tu Jhoothi Main Makkaar">Tu Jhoothi Main Makkaar (RS.350)</option>
+          <option value="Brahmastra">Brahmastra (RS.350)</option>
+        </select>
+      </div>
+      <ul class="showcase">
+        <li>
+          <div class="but"></div>
+          <small>Available</small>
+        </li>
+        <li>
+          <div class="but selected"></div>
+          <small>Selected</small>
+        </li>
+        <li>
+          <div class="but sold"></div>
+          <small>Sold</small>
+        </li>
+      </ul>
+    <div class="container">
+    <div class="screen"></div>
+    
+    <pre id="pe">
+
+
+<button class="but" id="A1" onclick="val(this.id)" >A1</button> <button class="but" id="A2" onclick="val(this.id)">A2</button> <button class="but" id="A3" onclick="val(this.id)">A3</button> <button class="but" id="A4" onclick="val(this.id)">A4</button> <button class="but" id="A5" onclick="val(this.id)">A5</button> <button class="but" id="A6" onclick="val(this.id)">A6</button> <button class="but" id="A7" onclick="val(this.id)">A7</button> <button class="but" id="A8" onclick="val(this.id)">A8</button> <button class="but" id="A9" onclick="val(this.id)">A9</button> <button class="but" id="A10" onclick="val(this.id)">A10</button>
+        
+<button class="but" id="B1" onclick="val(this.id)"> B1</button> <button class="but" id="B2" onclick="val(this.id)">B2</button> <button class="but" id="B3" onclick="val(this.id)">B3</button> <button class="but" id="B4" onclick="val(this.id)">B4</button> <button class="but" id="B5" onclick="val(this.id)">B5</button> <button class="but" id="B6" onclick="val(this.id)">B6</button> <button class="but" id="B7" onclick="val(this.id)">B7</button> <button class="but" id="B8" onclick="val(this.id)">B8</button> <button class="but" id="B9" onclick="val(this.id)">B9</button> <button class="but" id="B10" onclick="val(this.id)">B10</button>
+        
+<button class="but" id="C1" onclick="val(this.id)">C1</button> <button class="but" id="C2" onclick="val(this.id)">C2</button> <button class="but" id="C3" onclick="val(this.id)" >C3</button> <button class="but" id="C4" onclick="val(this.id)">C4</button> <button class="but" id="C5" onclick="val(this.id)">C5</button> <button class="but" id="C6" onclick="val(this.id)">C6</button> <button class="but" id="C7" onclick="val(this.id)">C7</button> <button class="but" id="C8" onclick="val(this.id)" >C8</button> <button class="but" id="C9" onclick="val(this.id)">C9</button> <button class="but" id="C10" onclick="val(this.id)">C10</button>
+    
+        
+       
+    
+    </pre>
+    </div>
+<div class="container" > Number of seats selected are <span id="count">0</span><br>
+    Seats Selected <span id="seatname"></span><br>
+    Total cost = Rs.<span id="cost">0</span>
+</div>
+<button onclick="redirect()" ><a href="#Invoice"> Make payment</a></button>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="invoice-container" id="Invoice">
+    <div class="header">
+      <h1>Movie Ticket Invoice</h1>
+    </div>
+    <div class="movie-details">
+      <h2>Movie Details</h2>
+      <ul>
+        <li><strong>Movie Name:</strong> <span id="moviename"></span></li>
+        <li><strong>Seat Number:</strong> <span id="sname"></span></li>
+      </ul>
+    </div>
+    <div class="payment-details">
+      <h2>Payment Details</h2>
+      <ul>
+        <li><strong>Price:</strong> Rs.<span id="price">0</span></li>
+        <li><strong>Tax:</strong> Rs.30</li>
+        <li><strong>Total:</strong> Rs.<span id="final">0</span> </li>
+      </ul>
+    </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+ 
+
+

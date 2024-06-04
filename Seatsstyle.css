@@ -1,0 +1,142 @@
+html{
+    scroll-behavior: smooth;
+}
+#sc{
+    background-color: blueviolet;
+    width: 500px;
+}
+body {
+    background-color: #242333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: "Lato", sans-serif;
+    margin: 0;
+  }
+.but:hover{
+	
+    transform: scale(1.2);
+}
+.but:active{
+    background-color: rgba(224, 173, 4, 0.925);
+}
+
+.but{
+    color: white;
+    background-color: #444451;
+  height: 26px;
+  width: 32px;
+  margin: 3px;
+  border-width: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.visited{
+    background-color: rgba(224, 173, 4, 0.925);
+}
+.container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+  }
+  .screen {
+    background-color: #fff;
+    height: 120px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-48deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  }
+  .movie-container {
+    margin: 20px 0;
+  }
+  
+  .movie-container select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .showcase {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  .showcase li small {
+    margin-left: 2px;
+  }
+  
+  .but.selected{
+    background-color: green;
+    height: 26px;
+  width: 32px;
+  margin: 3px;
+  border-width: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+  }
+  .invoice-container {
+    color: black;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    
+    box-shadow: 15px 15px 15px rgba(250, 250, 250, 0.486);
+  }
+  
+ 
+  
+  .movie-details, .payment-details {
+    margin-bottom: 30px;
+  }
+  
+  .movie-details h2, .payment-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  li strong {
+    display: inline-block;
+    width: 120px;
+  }
+  
+  .payment-details li:last-child {
+    font-weight: bold;
+  }
+  
+  @media print {
+    .invoice-container {
+      box-shadow: none;
+      border: none;
+    }
+  }
